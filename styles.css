@@ -1,0 +1,184 @@
+:root {
+    --main-green: #7c8584;
+    --main-brown: #baa287;
+    --main-blue: #BDD4F1;
+    --main-gray: #E6E3E4;
+    --main-black: #121b28;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--main-brown);
+    font-family: Chalkduster, fantasy;
+}
+
+#wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#game {
+    height: 800px;
+    width: 1000px;
+    
+    margin-top: 50px;
+}
+
+#title {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+.title {
+    font-size: 75px;
+    background-color: #E6E3E4;
+    padding: 20px;
+    color: var(--main-green);
+    align-items: center;
+    box-shadow:3px 3px 1px 1px#121b28;
+    border-radius: 3px;
+}
+#gameplay {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.messageboard {
+        width: 30%;
+        display: flex;
+        flex-direction: column;
+
+}
+#compsel, #playsel {
+    
+    margin: 20px;
+    height: 80%;
+    width: 250px;
+    background-color:#121b28;
+    opacity: .4;
+    border-radius: 5px;
+
+}
+
+ .scoreboard {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    
+    height: 150px;
+}
+.score {
+    height: 140px;
+    width: 100px;
+    background-color: #121b28;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+} 
+
+.messages {
+    
+    height: 60px
+}
+
+#choice {
+   
+    height: 200px;
+    display: flex; 
+    align-items: center;
+    justify-content: space-evenly;
+}
+.start {
+    display: flex;
+    justify-content: center;
+}
+#start {
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+    color: var(--main-green);
+    font-family:Chalkduster, fantasy;
+}
+
+
+.rps {
+    height:180px;
+    width: 20%;
+    background-color: var(--main-gray);
+    box-shadow:3px 3px 1px 1px#121b28;
+    border-radius: 3px;
+   
+}
+
+
+.click {
+    box-shadow:3px 3px 1px 1px#121b28;
+}
+
+.click:hover {
+    box-shadow:3px 3px 1px 1px var(--main-green);
+    padding: -2px;
+    cursor: pointer;
+}
+
+.rock {
+    background: var(--main-gray) no-repeat center url("https://twemoji.maxcdn.com/svg/270a.svg");
+    background-size: 80% 80%;
+  }
+  
+  .paper {
+    background: var(--main-gray) no-repeat center url("https://twemoji.maxcdn.com/svg/270b.svg");
+    background-size: 80% 80%;
+  }
+  
+  .scissors {
+    background: var(--main-gray) no-repeat center url("https://twemoji.maxcdn.com/svg/270c.svg");
+    background-size: 80% 80%;
+  }
+
+  .rock1 {
+    background: var(--main-gray) no-repeat center url("https://twemoji.maxcdn.com/svg/270a.svg");
+    background-size: 70% 70%;
+  }
+  
+  .paper1 {
+    background: var(--main-gray) no-repeat center url("https://twemoji.maxcdn.com/svg/270b.svg");
+    background-size: 70% 70%;
+  }
+  
+  .scissors1 {
+    background: var(--main-gray) no-repeat center url("https://twemoji.maxcdn.com/svg/270c.svg");
+    background-size: 70% 70%;
+  }
+
+  .messages {
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--main-gray);
+    text-shadow: var(--main-gray) 1px 0 10px;
+  }
+
+  .scores {
+    color: var(--main-gray)
+  }
