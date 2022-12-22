@@ -49,7 +49,7 @@ body {
     padding: 20px;
     color: var(--main-green);
     align-items: center;
-    box-shadow:3px 3px 1px 1px#121b28;
+    box-shadow:1px 1px 1px 1pxvar (--main-gray);
     border-radius: 3px;
 }
 #gameplay {

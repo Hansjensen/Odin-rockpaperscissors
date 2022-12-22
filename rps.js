@@ -19,75 +19,84 @@ let scissors = document.createElement('div');
     scissors.setAttribute('id', 'scissors');
     scissors.classList.add('rps', 'click', 'scissors1');
 let choice = document.querySelector('#choice');
+let result = '';
+let rps = document.querySelectorAll('.rps');
+let gamecheck = 2;
+let playerSelection = '';
 
-
-
-start.addEventListener('click', () => {
-    choice.appendChild(rock);
-    choice.appendChild(paper);
-    choice.appendChild(scissors);
-    comp= 0;
-    you = 0;
-    message.textContent = "Rock paper or scissors?"
-    playscore.textContent = you;
-    compscore.textContent = comp;
-    playsel.classList = "";
-    compsel.classList = "";
-    start.remove();
+message.textContent = 'Press Start!';
+rps.forEach((div) => {div.addEventListener('click', () => {
     
-    
+    let pclass = playsel.classList
+    while (pclass.length > 0) {
+        pclass.remove(pclass.item(0));
+     }
+     let cclass = compsel.classList
+    while (cclass.length > 0) {
+        cclass.remove(cclass.item(0));
+     }
+    playerSelection = div.id
+    playGame(playerSelection);
 
+    });
 });
 
 
 
-function gamePlay() {
-    const rps = document.querySelectorAll('.rps')
-    rps.forEach((div) => {
-        div.addEventListener('click', () => {
-            playsel.classList = "";
-            compsel.classList = "";
-            let playerSelection = div.id;
-            let computerSelection = getComputerChoice();
-            let result = playRound(playerSelection, computerSelection);
-            playsel.classList.add(playerSelection);
-            compsel.classList.add(computerSelection);
-            message.textContent = result;
-       
+start.addEventListener('click', () => {
+    start.remove();
+    gamecheck = 3;
+    you= 0;
+    comp= 0;
+    compscore.textContent = comp;
+    playscore.textContent = you;
+    message.textContent = 'Rock Paper or Scissors?'
+    
+    
+});
+
+function playGame(playerSelection) {
+    if (gamecheck === 3) {
+        let computerSelection = getComputerChoice();
+        let result = playRound(playerSelection, computerSelection);
+        message.textContent = result;
+        playsel.classList.add(playerSelection);
+        compsel.classList.add(computerSelection)
+
         if (result[4] === 'w') {
-             you++;
-        } else if (result[4] === 'l'){
+            you++;
+        }   else if (result[4] === 'l') {
             comp++;
         } 
-
-        playscore.textContent = you;
         compscore.textContent = comp;
-
-    if (you === 5) {
-            rock.remove();
-            paper.remove();
-            scissors.remove();
-            message.textContent = "YOU WIN!";
-            startdiv.appendChild(start);
-            return;
-     } else if (comp === 5) {
-        rock.remove();
-        paper.remove();
-        scissors.remove();
-        message.textContent = "YOU LOSE!";
-        startdiv.appendChild(start);
-        return;
-       }
-       
-      
-    
+        playscore.textContent = you;
         
-        });
-    });
-    
-    
-};
 
+        if (you === 5) {
+            message.textContent = "YOU WIN! "
+            startdiv.appendChild(start);
+            gamecheck = 1;
+        } else if (comp === 5) {
+            message.textContent = "YOU LOSE! "
+            startdiv.appendChild(start);
+            gamecheck = 1;
+        } else {
+            return;
+        }
+
+
+    } else {
+        return;
+    }
+
+}
+
+
+
+
+
+    
+  
 
 
 
